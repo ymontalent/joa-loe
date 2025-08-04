@@ -187,7 +187,7 @@ section {
 
     &-bg {
         @include absolute-full;
-        background: url('/img/poster.png') center center/cover no-repeat;
+        background: url('/assets/poster.png') center center/cover no-repeat;
         filter: brightness(0.8);
 
         &::after {
