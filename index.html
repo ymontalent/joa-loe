@@ -22,7 +22,7 @@
     <!-- Header with Offcanvas Sidebar -->
     <!-- Header -->
     <header>
-        <nav class="navbar fixed-top w-100" style="background: rgba(0,0,0,0.3);">
+        <nav class="navbar w-100">
             <div class="container d-flex justify-content-center position-relative">
                 <!-- Logo centered -->
                 <a class="navbar-brand text-white mx-auto" href="/">JOA & LOE</a>
@@ -55,29 +55,30 @@
     </header>
 
     <main>
-        <!-- Hero -->
-        <section id="hero" class="position-relative vh-100 overflow-hidden">
-            <div class="position-absolute top-0 start-0 w-100 h-100">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                    <iframe src="https://player.vimeo.com/video/1099659392?h=249dc90d7b&badge=1&autoplay=1&player_id=0&app_id=58479&controls=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="JOA&amp;LOÉ"></iframe>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>The Penthouses</h1>
+                    <p class="tagline">A duo of exquisite penthouses where architecture, art, design, and landscape blend in a seamless expression of elevated island living.</p>
                 </div>
-                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.3);"></div>
             </div>
-            <div class="container">
-                <div class="position-relative z-1 d-flex flex-column justify-content-center align-items-start h-100 p-4 text-white"
-                    style="max-width: 600px;">
-                    <h1 class="display-1 fw-bold fst-italic">The Penthouses</h1>
-                    <p class="fs-4 mt-3">A duo of exquisite penthouses where architecture, art, design, and landscape
-                        blend in a seamless expression of elevated island living.</p>
-                    <button id="playButton" class="btn btn-light btn-lg rounded-circle mt-4">
-                        <i class="fas fa-play"></i>
-                    </button>
-                </div>
+            <div class="play-button" id="playButton">
+                <div class="triangle-right"></div>
             </div>
         </section>
 
+        <!-- Video Modal -->
+        <div class="video-modal" id="videoModal">
+            <button class="close-video" id="closeVideo"></button>
+            <div class="video-container">
+                <iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
         <!-- Intro Section -->
-        <section id="intro" class="py-5">
+        <section id="intro">
             <div class="container text-center">
                 <p class="intro-text">
                     Two names, two penthouses, one singular vision. Nestled on the island's West coast, these design-led
@@ -140,7 +141,7 @@
                         <a href="#" class="card text-white overflow-hidden">
                             <img src="/img/Art-de-vivre-1.png" class="" alt="">
                             <div class="card-img-overlay d-flex align-items-center justify-content-center p-3">
-                                <h3 class="card-title">Designed, Iconic Penthouses</h3>
+                                <h3 class="card-title">DESIGN-LED, ICONIC PENTHOUSES</h3>
                             </div>
                         </a>
                     </div>
@@ -148,7 +149,7 @@
                         <a href="#" class="card text-white overflow-hidden">
                             <img src="/img/Art-de-vivre-2.png" class="" alt="">
                             <div class="card-img-overlay d-flex align-items-center justify-content-center p-3">
-                                <h3 class="card-title">Curated Island Living Experiences</h3>
+                                <h3 class="card-title">CURATED ISLAND-LIVING EXPERIENCES</h3>
                             </div>
                         </a>
                     </div>
@@ -164,7 +165,7 @@
                         <a href="#" class="card text-white overflow-hidden">
                             <img src="/img/Art-de-vivre-4.png" class="" alt="">
                             <div class="card-img-overlay d-flex align-items-center justify-content-center p-3">
-                                <h3 class="card-title">Designed, Iconic Penthouses</h3>
+                                <h3 class="card-title">THE BEST SPOT</h3>
                             </div>
                         </a>
                     </div>
@@ -172,7 +173,7 @@
                         <a href="#" class="card text-white overflow-hidden">
                             <img src="/img/Art-de-vivre-5.png" class="" alt="">
                             <div class="card-img-overlay d-flex align-items-center justify-content-center p-3">
-                                <h3 class="card-title">Curated Island Living Experiences</h3>
+                                <h3 class="card-title">HOSPITALITY SERVICE</h3>
                             </div>
                         </a>
                     </div>
@@ -206,18 +207,23 @@
                 <h2 class="section-title text-center">More than just <span>Penthouses</span></h2>
                 <div class="row g-4">
                     <div class="col-md-6 d-flex flex-column bg-white h-100 p-3">
-                        <img src="https://picsum.photos/821/527?random=1" class="img-fluid mb-3" alt="">
-                        <h3 class="h3 mb-2">Restaurants &amp; Bars</h3>
-                        <p>Wellness rituals unfold in the privacy of your penthouse—from restorative massages to private
-                            yoga or Pilates sessions, all designed to recharge body and mind at your own rhythm.</p>
-                        <a href="#" class="discover-link mt-auto">DISCOVER</a>
+                        <img src="/img/penthouses-1.png" class="img-fluid mb-3" alt="">
+                        <div class="text-container text-center">
+                            <h3 class="h3 mb-2">Restaurants &amp; Bars</h3>
+                            <p>Wellness rituals unfold in the privacy of your penthouse—from restorative massages to private
+                                yoga or Pilates sessions, all designed to recharge body and mind at your own rhythm.</p>
+                            <a href="#" class="discover-link mt-auto">DISCOVER</a>
+                        </div>
+                        
                     </div>
                     <div class="col-md-6 d-flex flex-column bg-white h-100 p-3">
-                        <img src="https://picsum.photos/821/527?random=1" class="img-fluid mb-3" alt="">
-                        <h3 class="h3 mb-2">Wellness Rituals</h3>
-                        <p>Wellness rituals unfold in the privacy of your penthouse—from restorative massages to private
-                            yoga or Pilates sessions, all designed to recharge body and mind at your own rhythm.</p>
-                        <a href="#" class="discover-link mt-auto">DISCOVER</a>
+                        <img src="/img/penthouses-2.png" class="img-fluid mb-3" alt="">
+                        <div class="text-container text-center">
+                            <h3 class="h3 mb-2">Wellness Rituals</h3>
+                            <p>Wellness rituals unfold in the privacy of your penthouse—from restorative massages to private
+                                yoga or Pilates sessions, all designed to recharge body and mind at your own rhythm.</p>
+                            <a href="#" class="discover-link mt-auto">DISCOVER</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,7 +283,54 @@
 
     <!-- Bootstrap JS & Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>    
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const playButton = document.getElementById('playButton');
+            const videoModal = document.getElementById('videoModal');
+            const closeVideo = document.getElementById('closeVideo');
+            const vimeoPlayer = document.getElementById('vimeoPlayer');
+            const videoUrl = 'https://player.vimeo.com/video/1099659392';
+
+            // Play button click
+            playButton.addEventListener('click', function() {
+                videoModal.classList.add('active');
+                vimeoPlayer.src = videoUrl;
+                
+                // Fade in effect
+                setTimeout(() => {
+                    videoModal.classList.add('show');
+                }, 10);
+            });
+
+            // Close video
+            function closeVideoModal() {
+                videoModal.classList.remove('show');
+                
+                setTimeout(() => {
+                    videoModal.classList.remove('active');
+                    vimeoPlayer.src = '';
+                }, 300);
+            }
+
+            closeVideo.addEventListener('click', closeVideoModal);
+
+            // Close on background click
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    closeVideoModal();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                    closeVideoModal();
+                }
+            });
+        });
+    </script>
     <script src="js/script.js"></script>
 </body>
 

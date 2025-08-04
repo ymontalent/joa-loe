@@ -26,6 +26,23 @@ $bp-md: 768px;
 $bp-lg: 992px;
 
 //────────────────────────────────────────────────────────
+// Mixins
+//────────────────────────────────────────────────────────
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin absolute-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+//────────────────────────────────────────────────────────
 // Global Reset & Base Styles
 //────────────────────────────────────────────────────────
 *,
@@ -51,14 +68,14 @@ body {
 //────────────────────────────────────────────────────────
 // Headings
 //────────────────────────────────────────────────────────
-.section-title{
+.section-title {
     text-align: center;
     font-style: none;
     font-weight: 400;
-    font-size: 4.5rem; // adjust as needed
+    font-size: 4.25rem; // adjust as needed
     margin-bottom: 8rem;
 
-    span{
+    span {
         font-family: "Pinyon Script", cursive;
     }
 }
@@ -108,10 +125,9 @@ section {
 // Navbar / Header
 //────────────────────────────────────────────────────────
 .navbar {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top:0;
     width: 100%;
-    background-color: $overlay-black;
     z-index: 1000;
 
     .container {
@@ -164,63 +180,131 @@ section {
 //────────────────────────────────────────────────────────
 // Hero Section
 //────────────────────────────────────────────────────────
-#hero {
+.hero {
     position: relative;
     height: 100vh;
     overflow: hidden;
 
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    &-bg {
+        @include absolute-full;
+        background: url('/img/poster.png') center center/cover no-repeat;
+        filter: brightness(0.8);
+
+        &::after {
+            content: '';
+            @include absolute-full;
+            background: linear-gradient(to bottom, rgba($color-black, 0.2) 0%, rgba($color-black, 0.4) 100%);
+        }
     }
 
-    &::before {
+    &-content {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        max-width: 580px;
+        justify-content: center;
+        margin-left: 12%;
+    }
+
+    &-text {
+        color: $color-white;
+        padding: 0 2rem;
+
+        h1 {
+            font-family: "Pinyon Script", cursive;
+            font-size: 4.5rem;
+            font-weight: 100;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 0 auto;
+        }
+    }
+}
+
+//────────────────────────────────────────────────────────
+// Play Button
+//────────────────────────────────────────────────────────
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    .triangle-right {
+        width: 0;
+        height: 0;
+        border-top: 36.5px solid transparent;
+        border-bottom: 36.5px solid transparent;
+        border-left: 61px solid rgba(255,255,255,0.8);
+    }
+}
+
+//────────────────────────────────────────────────────────
+// Video Modal
+//────────────────────────────────────────────────────────
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color-black, 0.95);
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.active {
+        @include flex-center;
+    }
+
+    &.show {
+        opacity: 1;
+    }
+}
+
+.video-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    padding-bottom: 56.25%; // 16:9 aspect ratio
+
+    iframe {
+        @include absolute-full;
+        border: none;
+    }
+}
+
+.close-video {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2001;
+
+    &::before,
+    &::after {
         content: '';
         position: absolute;
-        inset: 0;
-        background-color: $overlay-black;
-        z-index: 1;
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        height: 2px;
+        background: $color-white;
+        transform: translate(-50%, -50%) rotate(45deg);
     }
 
-    .position-relative {
-        position: relative;
-        z-index: 2;
-        max-width: 600px;
-        padding: 2rem;
-        color: $color-white;
-    }
-
-    .hero-title {
-        font-size: 4rem; // ~64px
-        font-style: italic;
-        font-weight: 700;
-        line-height: 1.1;
-    }
-
-    .hero-subtitle {
-        font-size: 1.25rem; // ~20px
-        margin-top: 1rem;
-    }
-
-    #playButton {
-        margin-top: 2rem;
-        background-color: $color-white;
-        border: none;
-        width: 3.5rem;
-        height: 3.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.25rem;
-        cursor: pointer;
-
-        &:hover {
-            opacity: 0.9;
-        }
+    &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
     }
 }
 
@@ -229,10 +313,11 @@ section {
 //────────────────────────────────────────────────────────
 #intro {
     .intro-text {
-        font-size:1.5rem; // 35px
-        max-width: 800px;
+        font-size: 1.8rem;
+        max-width: 80%;
         margin: auto;
         color: $color-dark;
+        padding: 4rem 0;
     }
 }
 
@@ -240,19 +325,21 @@ section {
 // Gallery Section
 //────────────────────────────────────────────────────────
 #gallery {
-    .description{
-        width: 800px;
+    .description {
+        width: 80%;
         margin: 100px 0;
-        font-size:1.35rem;
+        font-size: 1.8rem;
     }
-    h2:first-child{
+
+    h2:first-child {
         text-align: left;
     }
 
-    h2{
+    h2 {
         text-align: right;
-        font-size: 4rem;
+        font-size: 5rem;
         font-weight: bold;
+        margin-bottom: 3rem;
     }
 }
 
@@ -306,7 +393,7 @@ section {
         cursor: pointer;
         display: flex;
         background-color: transparent;
-        border:none;
+        border: none;
 
         img {
             display: block;
@@ -336,7 +423,7 @@ section {
             text-align: center;
         }
     }
-    
+
 
     // Wrap each image + title in a link
     .card-link {
@@ -378,22 +465,23 @@ section {
         color: $color-dark;
     }
 
-    .map-container{
+    .map-container {
         position: relative;
         height: 800px;
 
-        .image{
+        .image {
             position: absolute;
             top: 0;
             width: 100%;
             height: 800px;
 
-            img{
+            img {
                 width: 100%;
                 height: auto;
             }
         }
-        .legend{
+
+        .legend {
             position: absolute;
             bottom: 10%;
             right: 0;
@@ -401,12 +489,12 @@ section {
             background-color: #e6e2d6;
             padding: 40px;
 
-            h3{
+            h3 {
                 margin-bottom: 20px;
                 font-family: "Pinyon Script", cursive;
             }
 
-            p{
+            p {
                 margin-bottom: 0;
                 font-size: 20px;
             }
@@ -420,14 +508,33 @@ section {
 #more-than-penthouses {
     margin: 4rem 0;
 
-    h2{
+    h2 {
         color: $color-black;
     }
 
-    .discover-link {
-        display: inline-block;
-        margin-top: auto;
-        color: $color-dark;
+    .text-container {
+        width: 65%;
+        margin: 0 auto;
+
+        h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 2rem 0;
+        }
+
+        p {
+            font-size: 1.65rem;
+            margin-top: 2rem;
+        }
+
+        .discover-link {
+            display: inline-block;
+            margin-top: auto;
+            color: $color-dark;
+            text-transform: uppercase;
+            font-size: 1.65rem;
+            text-decoration: underline;
+        }
     }
 }
 
