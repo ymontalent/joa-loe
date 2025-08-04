@@ -98,9 +98,6 @@ section footer {
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
-.offcanvas-end .nav-link:hover {
-  color: white;
-}
 
 .hero {
   position: relative;

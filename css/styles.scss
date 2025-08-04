@@ -170,10 +170,6 @@ section {
         color: $color-white;
         margin-bottom: 1rem;
         font-size: 1.25rem;
-
-        &:hover {
-            color: lighten($color-white, 15%);
-        }
     }
 }
 
