@@ -25,6 +25,7 @@ html {
 
 body {
   font-family: "Gelasio", serif;
+  font-weight: normal;
   background-color: #fdfcf7;
   color: #2b2e34;
   line-height: 1.5;
@@ -42,6 +43,9 @@ body {
   font-weight: 100;
   font-size: 6.25rem;
   text-align: center;
+}
+#contact .double-font {
+  color: #ffffff;
 }
 @media screen and (max-width: 1100px) {
   .double-font {
@@ -118,12 +122,21 @@ header h1 span {
   overflow: hidden;
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content: center;
+  padding: 0;
+}
+#contact .hero {
+  height: 659px;
 }
 .hero .hero-text {
-  width: 52%;
+  width: 43%;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+#contact .hero .hero-text {
+  width: 100%;
 }
 @media screen and (max-width: 1023px) {
   .hero .hero-text {
@@ -131,21 +144,21 @@ header h1 span {
   }
 }
 .hero .hero-text .tagline {
-  font-size: 1.875rem;
-  line-height: 2.813rem;
+  font-size: 20px;
+  line-height: 35px;
   color: white;
   font-weight: 200;
-  padding: 0 8%;
+  padding: 0 3%;
   margin: 3.125rem 0;
 }
 .hero .hero-text .btn.cta {
   font-weight: 200;
   font-style: italic;
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
-  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  color: #FDFCF7;
   background-color: transparent;
-  padding: 1.5rem 2.5rem;
+  padding: 15px 60px;
   border: 1px solid #ffffff;
   border-radius: 50px;
   text-transform: uppercase;
@@ -249,12 +262,31 @@ header h1 span {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.video-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  background: #000;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#contact #intro {
+  padding-top: 0;
+}
 #intro .intro-text {
-  font-size: 1.563rem;
-  line-height: 2.813rem;
-  max-width: 80%;
+  font-size: 17px;
+  line-height: 35px;
+  max-width: 50%;
   margin: auto;
   padding-top: 4.5rem;
+}
+#contact #intro .intro-text {
+  max-width: 78%;
 }
 
 #gallery, #architect {
@@ -262,7 +294,7 @@ header h1 span {
 }
 #gallery .section-title, #architect .section-title {
   font-weight: 100;
-  font-size: 6.25rem;
+  font-size: 80px;
   text-align: center;
 }
 #gallery .section-title span, #architect .section-title span {
@@ -273,10 +305,10 @@ header h1 span {
   text-align: right;
 }
 #gallery .description, #architect .description {
-  width: 80%;
-  margin: 6.25rem 0;
-  font-size: 1.563rem;
-  line-height: 2.813rem;
+  width: 52%;
+  margin: 12.5rem 0 9.35rem;
+  font-size: 17px;
+  line-height: 35px;
 }
 #gallery h2:first-child, #architect h2:first-child {
   text-align: left;
@@ -287,6 +319,10 @@ header h1 span {
   font-weight: bold;
   margin-bottom: 3rem;
   font-weight: 100;
+}
+
+#architect .description {
+  width: 55%;
 }
 
 .gallery-slider {
@@ -401,13 +437,22 @@ header h1 span {
   font-family: "Monsieur La Doulaise", cursive;
   font-size: 10.625rem;
 }
+#art-de-vivre .art-de-vivre-content {
+  width: 75%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  #art-de-vivre .art-de-vivre-content {
+    width: 100%;
+  }
+}
 #art-de-vivre .content-block {
   display: flex;
   flex-direction: column;
   gap: 3.75rem;
 }
 #art-de-vivre .content-block .card-item {
-  width: 75%;
+  width: 83%;
 }
 @media screen and (max-width: 1024px) {
   #art-de-vivre .content-block .card-item {
@@ -428,10 +473,10 @@ header h1 span {
 #art-de-vivre .content-block h3 {
   font-family: "Gelasio", serif;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 20px;
   text-transform: uppercase;
   color: #2b2e34;
-  margin: 2.5rem 0;
+  margin: 75px 0 32px;
 }
 @media screen and (max-width: 1023px) {
   #art-de-vivre .content-block h3 {
@@ -440,8 +485,8 @@ header h1 span {
 }
 #art-de-vivre .content-block p {
   font-family: "Gelasio", serif;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 35px;
   color: #2b2e34;
 }
 @media screen and (max-width: 1023px) {
@@ -475,10 +520,10 @@ header h1 span {
   max-width: 56.25rem;
   margin: 0 auto 7rem;
   text-align: center;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 35px;
   color: #2b2e34;
-  width: 57%;
+  width: 52%;
 }
 @media screen and (max-width: 1023px) {
   #space-layout .intro {
@@ -587,12 +632,6 @@ header h1 span {
 }
 #site-overview .map-container .image .text-image {
   position: absolute;
-  color: #ffffff;
-  font-size: 3.75rem;
-  line-height: 5rem;
-  letter-spacing: 0.075rem;
-  font-weight: 100;
-  font-style: italic;
   top: 9rem;
   left: 9rem;
 }
@@ -601,6 +640,39 @@ header h1 span {
     top: 40px;
     left: 10%;
   }
+}
+#site-overview .map-container .image .text-image h3 {
+  color: #ffffff;
+  font-size: 3.75rem;
+  line-height: 4rem;
+  letter-spacing: 0.075rem;
+  font-weight: 100;
+  font-style: italic;
+}
+@media screen and (max-width: 1023px) {
+  #site-overview .map-container .image .text-image h3 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+}
+#site-overview .map-container .image .cta {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+#site-overview .map-container .image .cta:hover, #site-overview .map-container .image .cta:focus {
+  background-color: #ffffff;
+  color: #2b2e34;
+  text-decoration: none;
 }
 #site-overview .map-container .legend {
   position: absolute;
@@ -617,7 +689,7 @@ header h1 span {
     padding: 1rem;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 767px) {
   #site-overview .map-container .legend {
     position: relative;
     top: 0;
@@ -641,19 +713,22 @@ header h1 span {
 #one-island {
   position: relative;
   padding-bottom: 20rem !important;
-  margin-bottom: -25rem;
+  margin-bottom: -12.5rem;
 }
 @media screen and (max-width: 1023px) {
   #one-island {
-    margin: 0;
-    padding-top: 100px !important;
-    padding-bottom: 100px !important;
+    padding-bottom: 10rem !important;
   }
 }
 @media screen and (max-width: 1400px) {
   #one-island .container {
     max-width: 100%;
   }
+}
+#one-island .section-title {
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (max-width: 1023px) {
   #one-island .section-title {
@@ -665,23 +740,26 @@ header h1 span {
     display: block;
   }
 }
-#one-island .image-container {
-  position: absolute;
-  top: -20.625rem;
-}
-@media screen and (max-width: 1100px) {
-  #one-island .image-container {
-    top: -16%;
-  }
-}
-@media screen and (max-width: 1023px) {
-  #one-island .image-container {
-    display: none;
-  }
-}
 #one-island .container {
   position: relative;
   z-index: 1;
+}
+#one-island .image-container {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 78%;
+}
+#one-island .image-container img {
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  #one-island .image-container {
+    position: relative;
+    top: 0;
+  }
 }
 #one-island .section-title {
   font-weight: 100;
@@ -708,7 +786,7 @@ header h1 span {
   }
 }
 #one-island .description {
-  margin: 31.25rem 3% 33.188rem 59%;
+  margin: 583px 15% 350px 59%;
 }
 @media screen and (max-width: 1400px) {
   #one-island .description {
@@ -717,57 +795,245 @@ header h1 span {
 }
 @media screen and (max-width: 1023px) {
   #one-island .description {
-    margin: 0 5%;
+    margin-top: 40%;
+    margin-right: 10%;
+  }
+}
+@media screen and (max-width: 767px) {
+  #one-island .description {
+    margin-top: 50px;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 50px;
   }
 }
 #one-island .description p {
-  font-size: 1.563rem;
-  line-height: 2.813rem;
+  font-size: 17px;
+  line-height: 35px;
+  position: relative;
+  z-index: 1;
 }
 
 #getintouch .tagline {
-  font-size: 3.188rem;
+  font-size: 25px;
   letter-spacing: 0.032rem;
   margin: 9.875rem 0 4rem;
 }
 @media screen and (max-width: 1023px) {
   #getintouch .tagline {
-    margin: 40px 0;
+    margin: 40px 5%;
     font-size: 2rem;
   }
 }
 #getintouch h2 {
-  font-size: 5.625rem;
-  line-height: 6.875rem;
+  font-size: 50px;
+  line-height: 70px;
   text-align: left;
-  margin-right: 8%;
+  margin-right: 25%;
 }
 @media screen and (max-width: 1023px) {
   #getintouch h2 {
     font-size: 3rem;
     line-height: 1.3;
+    margin: 0 5%;
+    margin: 0 5%;
   }
 }
 #getintouch a {
   font-weight: 200;
   font-style: italic;
-  font-size: 1.563rem;
+  font-size: 17px;
   letter-spacing: 0.047rem;
   color: #ffffff;
   background-color: #2b2e34;
-  padding: 1.5rem 0;
+  padding: 10px 0;
   border: 2px solid #ffffff;
   border-radius: 50px;
   text-transform: uppercase;
   transition: all 0.3s ease;
   display: inline-block;
-  width: 18.75rem;
+  width: 184px;
+}
+@media screen and (max-width: 1023px) {
+  #getintouch a {
+    margin: 20px 5%;
+  }
 }
 #getintouch a:hover, #getintouch a:focus {
   background-color: #ffffff;
   color: #2b2e34;
   border-color: #2b2e34;
   text-decoration: none;
+}
+
+.form-container {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #fdfcf7;
+  padding: 60px 0;
+}
+@media (max-width: 1280px) {
+  .form-container {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.form-title {
+  text-align: center;
+  font: normal normal medium 30px/86px "Gelasio", serif;
+  letter-spacing: 0.3px;
+  color: #2B2E34;
+  margin-bottom: 80px;
+}
+@media (max-width: 768px) {
+  .form-title {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+  }
+}
+
+.form-row {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 64px;
+}
+@media (max-width: 1024px) {
+  .form-row {
+    flex-direction: column;
+    gap: 64px;
+  }
+}
+.form-row .form-group {
+  flex: 1;
+}
+.form-row .form-group.full-width {
+  flex: none;
+  width: 100%;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-size: 17px;
+  letter-spacing: 1.19px;
+  color: #2B2E34;
+  margin-bottom: 10px;
+  font-family: "Gelasio", serif;
+}
+
+input[type=text],
+input[type=tel],
+input[type=email],
+select {
+  width: 100%;
+  height: 67px;
+  border: 1px solid #ccc;
+  padding: 0 20px;
+  font-family: "Gelasio", serif;
+  font-size: 17px;
+  background-color: #fdfcf7;
+  color: #2B2E34;
+}
+@media (max-width: 1200px) {
+  input[type=text],
+  input[type=tel],
+  input[type=email],
+  select {
+    width: 100%;
+    max-width: 550px;
+  }
+}
+@media (max-width: 768px) {
+  input[type=text],
+  input[type=tel],
+  input[type=email],
+  select {
+    height: 50px;
+    font-size: 16px;
+  }
+}
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=email]:focus,
+select:focus {
+  outline: none;
+  border-color: #2B2E34;
+  box-shadow: none;
+}
+
+select.form-select {
+  padding-right: 40px;
+  border-radius: 0;
+  background-color: #fdfcf7 !important;
+  cursor: pointer;
+  color: #2B2E34 !important;
+  border: 1px solid #ccc;
+}
+
+.radio-group {
+  margin-top: -15px;
+  margin-bottom: 192px;
+}
+@media (max-width: 768px) {
+  .radio-group {
+    margin-bottom: 100px;
+  }
+}
+.radio-group .radio-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 20px;
+}
+.radio-group .radio-options .radio-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.radio-group .radio-options .radio-option input[type=radio] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  appearance: none;
+  border: 1px solid #ccc;
+}
+.radio-group .radio-options .radio-option input[type=radio]:checked {
+  background: #2B2E34;
+}
+.radio-group .radio-options .radio-option label {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: 1.19px;
+  color: #2B2E34;
+}
+
+.submit-container {
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .submit-container .form-container {
+    padding: 30px 20px;
+  }
+}
+.submit-container .submit-btn {
+  width: 184px;
+  height: 56px;
+  font: italic normal normal 17px/50px "Gelasio", serif;
+  letter-spacing: 0.51px;
+  color: #fdfcf7;
+  background-color: #2B2E34;
+  border: 2px solid #2B2E34;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.submit-container .submit-btn:hover {
+  background-color: #fdfcf7;
+  color: #2B2E34;
 }
 
 footer {

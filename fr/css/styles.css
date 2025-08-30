@@ -1,0 +1,882 @@
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,200,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&family=Monsieur+La+Doulaise&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  font-family: "Gelasio", serif;
+  font-weight: normal;
+  background-color: #fdfcf7;
+  color: #2b2e34;
+  line-height: 1.5;
+}
+
+.section-title {
+  text-align: center;
+  font-style: none;
+  font-weight: 400;
+  font-size: 4.25rem;
+  margin-bottom: 8rem;
+}
+
+.double-font {
+  font-weight: 100;
+  font-size: 6.25rem;
+  text-align: center;
+}
+@media screen and (max-width: 1100px) {
+  .double-font {
+    font-size: 5rem !important;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .double-font {
+    font-size: 3.5rem !important;
+  }
+}
+.double-font span {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 10.625rem;
+}
+@media screen and (max-width: 1100px) {
+  .double-font span {
+    font-size: 9.375rem !important;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .double-font span {
+    font-size: 7.5rem !important;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #bfa357;
+  outline: none;
+}
+
+section {
+  padding: 4.5rem 0;
+}
+section#hero {
+  padding: 0;
+}
+section#intro, section#gallery, section#more-than-penthouses, section#site-overview {
+  background-color: #ffffff;
+}
+section#one-island,
+section #architect,
+section #getintouch {
+  background-color: #e6e2d6;
+}
+section#art-de-vivre,
+section footer {
+  background-color: #a3a78e;
+}
+
+header {
+  position: absolute;
+  top: 5%;
+  z-index: 1;
+  width: 100%;
+}
+header h1 {
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+header h1 span {
+  color: #bfa357;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  padding: 0;
+}
+.hero .hero-text {
+  width: 43%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+  .hero .hero-text {
+    width: 80%;
+  }
+}
+.hero .hero-text .tagline {
+  font-size: 20px;
+  line-height: 35px;
+  color: white;
+  font-weight: 200;
+  padding: 0 3%;
+  margin: 3.125rem 0;
+}
+.hero .hero-text .btn.cta {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  color: #FDFCF7;
+  background-color: transparent;
+  padding: 15px 60px;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.hero .hero-text .btn.cta:hover, .hero .hero-text .btn.cta:focus {
+  background-color: #ffffff;
+  color: #2b2e34;
+  text-decoration: none;
+}
+.hero h1 {
+  text-indent: -9999px;
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/poster.png") center center/cover no-repeat;
+  filter: brightness(0.8);
+}
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.card:nth-child(3) {
+  font-size: 1.563rem;
+  font-style: italic;
+  color: white;
+  text-align: center;
+  padding: 1.813rem 1.313rem;
+  border: 2px solid white;
+}
+
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.video-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-modal.show {
+  opacity: 1;
+}
+
+.video-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  padding-bottom: 56.25%;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.close-video {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2001;
+}
+.close-video::before, .close-video::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.875rem;
+  height: 2px;
+  background: #ffffff;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.close-video::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#intro .intro-text {
+  font-size: 17px;
+  line-height: 35px;
+  max-width: 50%;
+  margin: auto;
+  padding-top: 4.5rem;
+}
+
+#gallery, #architect {
+  padding-bottom: 10rem;
+}
+#gallery .section-title, #architect .section-title {
+  font-weight: 100;
+  font-size: 80px;
+  text-align: center;
+}
+#gallery .section-title span, #architect .section-title span {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 10.625rem;
+}
+#gallery .section-title.title-loe, #architect .section-title.title-loe {
+  text-align: right;
+}
+#gallery .description, #architect .description {
+  width: 52%;
+  margin: 12.5rem 0 9.35rem;
+  font-size: 17px;
+  line-height: 35px;
+}
+#gallery h2:first-child, #architect h2:first-child {
+  text-align: left;
+}
+#gallery h2, #architect h2 {
+  text-align: right;
+  font-size: 6.875rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  font-weight: 100;
+}
+
+#architect .description {
+  width: 55%;
+}
+
+.gallery-slider {
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+}
+.gallery-slider .slick-track {
+  display: flex;
+  align-items: center;
+}
+.gallery-slider .slick-slide {
+  padding: 0 1.563rem;
+  outline: none;
+}
+.gallery-slider .slick-slide img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+.gallery-slider .slick-prev,
+.gallery-slider .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 2.063rem;
+  height: 2.063rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.gallery-slider .slick-prev::after,
+.gallery-slider .slick-next::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(50deg);
+  width: 2.063rem;
+  height: 2.063rem;
+  border-left: 0.375rem solid #2B2E34;
+  border-bottom: 0.375rem solid #2B2E34;
+}
+.gallery-slider .slick-prev {
+  left: -3.75rem;
+}
+.gallery-slider .slick-next {
+  right: -3.75rem;
+}
+.gallery-slider .slick-next::after {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+.gallery-slider .slick-disabled {
+  display: none !important;
+}
+.gallery-slider .slick-dots {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .gallery-slider .slick-slide {
+    padding: 0 0.938rem;
+  }
+  .gallery-slider .slick-slide img {
+    width: 18.75rem;
+    height: 16.375rem;
+  }
+  .gallery-slider .slick-prev {
+    left: -2.5rem;
+    font-size: 2rem;
+  }
+  .gallery-slider .slick-next {
+    right: -2.5rem;
+    font-size: 2rem;
+  }
+  .slider-container {
+    padding: 0 3.75rem;
+  }
+}
+@media (max-width: 576px) {
+  .gallery-slider .slick-slide {
+    padding: 0 0.625rem;
+  }
+  .gallery-slider .slick-slide img {
+    width: 15.625rem;
+    height: 13.625rem;
+  }
+  .gallery-slider .slick-prev {
+    left: -1.875rem;
+    font-size: 1.8rem;
+  }
+  .gallery-slider .slick-next {
+    right: -1.875rem;
+    font-size: 1.8rem;
+  }
+  .slider-container {
+    padding: 0 2.5rem;
+  }
+}
+#art-de-vivre {
+  background-color: #a3a78e;
+  padding: 5rem 0;
+}
+#art-de-vivre .section-title {
+  font-weight: 100;
+  font-size: 6.25rem;
+}
+#art-de-vivre .section-title span {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 10.625rem;
+}
+#art-de-vivre .art-de-vivre-content {
+  width: 75%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  #art-de-vivre .art-de-vivre-content {
+    width: 100%;
+  }
+}
+#art-de-vivre .content-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+}
+#art-de-vivre .content-block .card-item {
+  width: 83%;
+}
+@media screen and (max-width: 1024px) {
+  #art-de-vivre .content-block .card-item {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #art-de-vivre .content-block .card-item {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+#art-de-vivre .content-block img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#art-de-vivre .content-block h3 {
+  font-family: "Gelasio", serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #2b2e34;
+  margin: 75px 0 32px;
+}
+@media screen and (max-width: 1023px) {
+  #art-de-vivre .content-block h3 {
+    font-size: 2rem;
+  }
+}
+#art-de-vivre .content-block p {
+  font-family: "Gelasio", serif;
+  font-size: 17px;
+  line-height: 35px;
+  color: #2b2e34;
+}
+@media screen and (max-width: 1023px) {
+  #art-de-vivre .content-block p {
+    font-size: 1.25rem;
+  }
+}
+#art-de-vivre .content-block .divider {
+  border-top: 1px solid rgba(43, 46, 52, 0.4);
+  margin-top: 2.5rem;
+}
+#art-de-vivre .card-link {
+  display: block;
+}
+
+#space-layout {
+  background-color: #e6e2d6;
+  padding: 6rem 0 5rem;
+}
+#space-layout h2 {
+  font-weight: 100;
+  font-size: 6.25rem;
+  text-align: center;
+  margin-bottom: 6.25rem;
+}
+#space-layout h2 span {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 10.625rem;
+}
+#space-layout .intro {
+  max-width: 56.25rem;
+  margin: 0 auto 7rem;
+  text-align: center;
+  font-size: 17px;
+  line-height: 35px;
+  color: #2b2e34;
+  width: 52%;
+}
+@media screen and (max-width: 1023px) {
+  #space-layout .intro {
+    font-size: 1.25rem;
+    width: 80%;
+  }
+}
+#space-layout .plans {
+  position: relative;
+}
+@media (min-width: 768px) {
+  #space-layout .plans .col-md-6 + .col-md-6 {
+    border-left: 1px solid rgba(43, 46, 52, 0.3);
+  }
+}
+#space-layout .plan {
+  text-align: center;
+  padding: 0 1rem 2.5rem;
+}
+#space-layout .plan .plan-title {
+  font-weight: 100;
+  font-size: 3.75rem;
+  letter-spacing: 0.075rem;
+  color: #2b2e34;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+#space-layout .plan .plan-image {
+  width: 100%;
+  max-width: 35.625rem;
+  margin: 0 auto 1.25rem;
+}
+#space-layout .plan .plan-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#space-layout .plan .plan-specs {
+  font-family: "Gelasio", serif;
+  font-size: 0.95rem;
+  color: #2b2e34;
+  line-height: 1.6;
+  width: 40%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1023px) {
+  #space-layout .plan .plan-specs {
+    font-size: 1.25rem;
+    width: 50%;
+  }
+}
+#space-layout .plan .plan-specs .sep {
+  margin: 0 0.35rem;
+  opacity: 0.8;
+}
+@media (max-width: 768px) {
+  #space-layout .plans .col-md-6 {
+    border-left: 0 !important;
+  }
+  #space-layout .plan {
+    padding-bottom: 2rem;
+  }
+}
+
+#site-overview {
+  padding: 5rem 0;
+}
+@media screen and (max-width: 1023px) {
+  #site-overview {
+    padding: 2rem 0;
+  }
+}
+#site-overview h2 {
+  font-weight: 100;
+  font-size: 6.25rem;
+  text-align: center;
+  margin-bottom: 6.25rem;
+}
+#site-overview h2 span {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 10.625rem;
+}
+#site-overview .small-text {
+  font-size: 1rem;
+  color: #2b2e34;
+}
+#site-overview .map-container {
+  position: relative;
+  height: 50rem;
+}
+#site-overview .map-container .image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50rem;
+}
+@media screen and (max-width: 1023px) {
+  #site-overview .map-container .image {
+    position: relative;
+    height: auto;
+  }
+}
+#site-overview .map-container .image img {
+  width: 100%;
+  height: auto;
+}
+#site-overview .map-container .image .text-image {
+  position: absolute;
+  top: 9rem;
+  left: 9rem;
+}
+@media screen and (max-width: 1023px) {
+  #site-overview .map-container .image .text-image {
+    top: 40px;
+    left: 10%;
+  }
+}
+#site-overview .map-container .image .text-image h3 {
+  color: #ffffff;
+  font-size: 3.75rem;
+  line-height: 4rem;
+  letter-spacing: 0.075rem;
+  font-weight: 100;
+  font-style: italic;
+}
+@media screen and (max-width: 1023px) {
+  #site-overview .map-container .image .text-image h3 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+}
+#site-overview .map-container .image .cta {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+#site-overview .map-container .image .cta:hover, #site-overview .map-container .image .cta:focus {
+  background-color: #ffffff;
+  color: #2b2e34;
+  text-decoration: none;
+}
+#site-overview .map-container .legend {
+  position: absolute;
+  bottom: -15%;
+  right: 3%;
+  z-index: 1;
+  background-color: #e6e2d6;
+  padding: 2.5rem;
+}
+@media screen and (max-width: 1024px) {
+  #site-overview .map-container .legend {
+    bottom: 5%;
+    right: 1%;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  #site-overview .map-container .legend {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
+#site-overview .map-container .legend h3 {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 3.75rem;
+  margin-bottom: 1.25rem;
+}
+#site-overview .map-container .legend ul {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  padding-right: 10%;
+  padding-left: 0;
+  list-style: none;
+  list-style-position: inside;
+}
+
+#one-island {
+  position: relative;
+  padding-bottom: 20rem !important;
+  margin-bottom: -12.5rem;
+}
+@media screen and (max-width: 1023px) {
+  #one-island {
+    padding-bottom: 10rem !important;
+  }
+}
+@media screen and (max-width: 1400px) {
+  #one-island .container {
+    max-width: 100%;
+  }
+}
+#one-island .section-title {
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+  #one-island .section-title {
+    line-height: 1;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #one-island .section-title span {
+    display: block;
+  }
+}
+#one-island .container {
+  position: relative;
+  z-index: 1;
+}
+#one-island .image-container {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 78%;
+}
+#one-island .image-container img {
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  #one-island .image-container {
+    position: relative;
+    top: 0;
+  }
+}
+#one-island .section-title {
+  font-weight: 100;
+  font-size: 6.25rem;
+  text-align: center;
+}
+@media screen and (max-width: 1100px) {
+  #one-island .section-title {
+    font-size: 5rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #one-island .section-title {
+    margin-bottom: 20px;
+  }
+}
+#one-island .section-title span {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 10.625rem;
+}
+@media screen and (max-width: 1100px) {
+  #one-island .section-title span {
+    font-size: 9.375rem;
+  }
+}
+#one-island .description {
+  margin: 583px 15% 350px 59%;
+}
+@media screen and (max-width: 1400px) {
+  #one-island .description {
+    margin-top: 35%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #one-island .description {
+    margin-top: 40%;
+    margin-right: 10%;
+  }
+}
+@media screen and (max-width: 767px) {
+  #one-island .description {
+    margin-top: 50px;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 50px;
+  }
+}
+#one-island .description p {
+  font-size: 17px;
+  line-height: 35px;
+  position: relative;
+  z-index: 1;
+}
+
+#getintouch .tagline {
+  font-size: 25px;
+  letter-spacing: 0.032rem;
+  margin: 9.875rem 0 4rem;
+}
+@media screen and (max-width: 1023px) {
+  #getintouch .tagline {
+    margin: 40px 5%;
+    font-size: 2rem;
+  }
+}
+#getintouch h2 {
+  font-size: 50px;
+  line-height: 70px;
+  text-align: left;
+  margin-right: 25%;
+}
+@media screen and (max-width: 1023px) {
+  #getintouch h2 {
+    font-size: 3rem;
+    line-height: 1.3;
+    margin: 0 5%;
+    margin: 0 5%;
+  }
+}
+#getintouch a {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 17px;
+  letter-spacing: 0.047rem;
+  color: #ffffff;
+  background-color: #2b2e34;
+  padding: 10px 0;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: 184px;
+}
+@media screen and (max-width: 1023px) {
+  #getintouch a {
+    margin: 20px 5%;
+  }
+}
+#getintouch a:hover, #getintouch a:focus {
+  background-color: #ffffff;
+  color: #2b2e34;
+  border-color: #2b2e34;
+  text-decoration: none;
+}
+
+footer {
+  color: #ffffff;
+  background-color: #a3a78e;
+}
+footer .footer-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 4.688rem;
+}
+footer a {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+footer a:hover {
+  color: #bfa357;
+}
+
+@media (max-width: 768px) {
+  #hero .position-relative {
+    padding: 1rem;
+  }
+  #hero .hero-title {
+    font-size: 2.5rem;
+  }
+  #hero .hero-subtitle {
+    font-size: 1rem;
+  }
+  #hero #playButton {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+  }
+  .navbar .navbar-brand {
+    font-size: 1.5rem;
+  }
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

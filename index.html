@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <!-- Custom Styles -->
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/styles.css?v=2" rel="stylesheet">
 </head>
 
 <body>
@@ -45,7 +45,10 @@
         <div class="video-modal" id="videoModal">
             <button class="close-video" id="closeVideo"></button>
             <div class="video-container">
-                <iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <video id="videoPlayer" controls preload="metadata">
+                    <source src="assets/hero-video.mov" type="video/quicktime">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
 
@@ -107,12 +110,12 @@
         <!-- Art de vivre Section -->
         <section id="art-de-vivre" class="bg-sage">
             <div class="container">
-                <h2 class="section-title double-font">art <span class="script">de vivre</span></h2>
-                <div class="row g-5">
+                <h2 class="section-title double-font">Art <span class="script">de vivre</span></h2>
+                <div class="art-de-vivre-content row g-5">
                     <div class="col-md-6 content-block">
                         <div class="card-item">
-                            <img src="assets/art-1.png" alt="Design-led penthouse interior">
-                            <h3>DESIGN-LED, <br/>ICONIC PENTHOUSES</h3>
+                            <img src="assets/art-1.jpg" alt="Design-led penthouse interior">
+                            <h3>DESIGN-LED, ICONIC PENTHOUSES</h3>
                             <p>More than a home, JOA and LOE are design manifestos. Every element has been handpicked or custom-crafted to evoke emotion and elevate the experience. These are not penthouses made for mere living—they are for feeling, for marveling. JOA and LOE are where form and feeling collide—icons in architecture, and icons in the making.</p>
                             <div class="divider"></div>
                         </div>
@@ -137,7 +140,7 @@
                             <div class="divider"></div>
                         </div>
                         <div class="card-item">
-                            <img src="assets/art-4.png" alt="View from penthouse balcony">
+                            <img src="assets/art-4.jpg" alt="View from penthouse balcony">
                             <h3>CURATED ISLAND-LIVING EXPERIENCES</h3>
                             <p>JOA and LOE connect guests to the island's culture, landscape, and rhythm in a meaningful way. Your butler can plan island experiences and exclusive outings, but also bring the spirit of the island indoors: think a rum-tasting on the deck at sunset, a celebratory dinner crafted by the Chef using local, seasonal produce, a family cooking class, a serene massage on your terrace. The essence of Mauritius is infused into each and every curated experience.</p>
                             <div class="divider"></div>
@@ -153,7 +156,7 @@
         <!-- space & layout -->
         <section id="space-layout">
             <div class="container">
-                <h2 class="title-main double-font">space & <span>layout</span></h2>
+                <h2 class="title-main double-font">Spaces & <span>layout</span></h2>
                 <p class="intro">Each penthouse has three beautifully appointed suites, each with their unique design and individual bathrooms. Two of the bedrooms offer mesmerising seaviews. A fourth multipurpose room with a bespoke desk offers a space to reflect. The space may be converted into a bedroom for the Nanny or another member of the personnel. The infinity pool with its exotic wood deck is adjacent to the tisanerie with sitting chairs, connecting the interiors to the outside. The gorgeous kitchen with its marble countertop and carved wood-pannelled walls, is linked to a secondary discrete kitchen for the personnel Chef.</p>
 
                 <div class="row plans g-5">
@@ -190,12 +193,12 @@
         <!-- Site Overview Section -->
         <section id="site-overview">
             <div class="container">
-                <h2 class="section-title double-font">site <span>overview</span></h2>
+                <h2 class="section-title double-font">Site <span>overview</span></h2>
                 <div class="map-container clearfix">
                     <div class="image">
                         <div class="text-image">
                             <h3>LEGEND HILL<br/>Resort & Spa</h3>
-                            <button class="btn cta">VIEW FULL VIDEO</button>
+                            <button class="btn cta">Discover</button>
                         </div>
                         <img src="assets/site-overview.jpg" class="img-fluid" alt="Site plan">
                     </div>
@@ -216,7 +219,7 @@
         <!-- meet the architect Section -->
          <section id="architect">
             <div class="container">
-                <h2 class="section-title text-center double-font">meet the <span>architect</span></h2>
+                <h2 class="section-title text-center double-font">Meet the <span>architect</span></h2>
                 <div class="slider-container">
                     <div class="gallery-slider">
                         <div class="slide-item">
@@ -229,19 +232,21 @@
                 </div>
 
                 <!-- Description -->
-                <p class="text-center mx-auto description">Olivier Gossart founded his namesake agency,<strong><u>O.GOSSART</u></strong>, in Paris nearly two decades ago. A keen observer of new ways of living, he belongs to a generation of creative thinkers drawn to complexity—constantly exploring new ways to shape both collective and intimate spaces. The studio works across hospitality, residential, workplace, and yachting projects, crafting interiors that are at once sustainable, concept-driven, and deeply personal. Each project is approached as a distinct universe, where architecture, scenography, and design converge in a unified, thoughtful narrative. Guided by continuous curiosity, a taste for challenge, and a refined sense of aesthetics, Gossart’s practice reflects a vision for a new art of living—one attuned to a society in flux. To bring this vision to life, the agency collaborates with a diverse circle of artists, lighting designers, acousticians, landscape architects, and creators from the worlds of fashion and fragrance.</p>
+                <p class="text-center mx-auto description">Olivier Gossart founded his namesake agency, <strong><u>O.GOSSART</u></strong>, in Paris nearly two decades ago. A keen observer of new ways of living, he belongs to a generation of creative thinkers drawn to complexity—constantly exploring new ways to shape both collective and intimate spaces. The studio works across hospitality, residential, workplace, and yachting projects, crafting interiors that are at once sustainable, concept-driven, and deeply personal.</p>
             </div>
         </section>
 
         <!-- One Island, One Address Section -->
         <section id="one-island" class="py-5 bg-beige">
-            <div class="image-container">
-                <img src="/assets/map.png" class="img-fluid" alt="Map of Mauritius">
-            </div>
             <div class="container">
                 <h2 class="section-title double-font">one island, <span>one address</span></h2>
-                <div class="description">
-                    <p>Mauritius, a jewel in the Indian Ocean, is famed for its natural beauty, refined island living, and year-round tropical warmth. The sun-drenched west coast strikes a unique balance between wild, untamed nature and a vibrant, connected community.</p>
+                <div class="image-container">
+                    <img src="/assets/map.png" class="img-fluid" alt="Map of Mauritius">
+                </div>
+                <div class="content">
+                    <div class="description">
+                        <p>Mauritius, a jewel in the Indian Ocean, is famed for its natural beauty, refined island living, and year-round tropical warmth. The sun-drenched west coast strikes a unique balance between wild, untamed nature and a vibrant, connected community.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -285,54 +290,6 @@
 
     <!-- Bootstrap JS & Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>    
-    <!-- Custom JS -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const playButton = document.getElementById('playButton');
-            const videoModal = document.getElementById('videoModal');
-            const closeVideo = document.getElementById('closeVideo');
-            const vimeoPlayer = document.getElementById('vimeoPlayer');
-            const videoUrl = 'https://player.vimeo.com/video/1099659392';
-
-            // Play button click
-            playButton.addEventListener('click', function() {
-                videoModal.classList.add('active');
-                vimeoPlayer.src = videoUrl;
-                
-                // Fade in effect
-                setTimeout(() => {
-                    videoModal.classList.add('show');
-                }, 10);
-            });
-
-            // Close video
-            function closeVideoModal() {
-                videoModal.classList.remove('show');
-                
-                setTimeout(() => {
-                    videoModal.classList.remove('active');
-                    vimeoPlayer.src = '';
-                }, 300);
-            }
-
-            closeVideo.addEventListener('click', closeVideoModal);
-
-            // Close on background click
-            videoModal.addEventListener('click', function(e) {
-                if (e.target === videoModal) {
-                    closeVideoModal();
-                }
-            });
-
-            // Close on escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-                    closeVideoModal();
-                }
-            });
-        });
-    </script>
     <!-- jQuery (if not already included) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Slick JS -->
