@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -14,29 +14,56 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <!-- Custom Styles -->
-    <link href="css/styles.css?v=2" rel="stylesheet">
+    <link href="../css/styles.css?v=3" rel="stylesheet">
 </head>
 
 <body>
-
-    <!-- Header with Offcanvas Sidebar -->
     <!-- Header -->
     <header>
         <!-- Logo centered -->
         <h1>JOA <span>&</span> LOE</h1>
+        <nav role="navigation" aria-label="Language selector">
+            <select id="lang-switcher" name="lang-switcher" aria-label="Select language" onchange="if(this.value)window.location.href=this.value">
+                <option value="/" selected>EN</option>
+                <option value="/fr">FR</option>
+            </select>
+        </nav>
+        <script>
+            (function(){
+                var sel = document.getElementById('lang-switcher');
+                if (location.pathname.indexOf('/fr') === 0) sel.value = '/fr';
+            })();
+        </script>
     </header>
 
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-bg"></div>
+            <div class="hero-bg">
+                <!-- Background Video -->
+                <div class="video-container">
+                    <video 
+                        id="hero-video" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                        poster="../assets/poster.png"
+                    >
+                        <source src="../assets/hero-video.mp4" type="video/mp4">
+                        <source src="../assets/hero-video.webm" type="video/webm">
+                        <!-- Fallback for browsers that don't support video -->
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
             <div class="hero-content">
                 <div class="hero-text text-center">
                     <div class="image-container">
-                        <img src="/assets/hero.png" alt="The Penthouses, Black River, Mauritius" class="img-fluid">
+                        <img src="../assets/hero.png" alt="The Penthouses, Black River, Mauritius" class="img-fluid">
                     </div>
                     <p class="tagline">A duo of exquisite penthouses where architecture, art, design, and landscape blend in a seamless expression of elevated island living.</p>
-                    <button class="btn cta" id="playButton">VIEW FULL VIDEO</button>
+                    <!-- <button class="btn cta" id="playButton">VIEW FULL VIDEO</button> -->
                 </div>
             </div>
         </section>
@@ -45,10 +72,7 @@
         <div class="video-modal" id="videoModal">
             <button class="close-video" id="closeVideo"></button>
             <div class="video-container">
-                <video id="videoPlayer" controls preload="metadata">
-                    <source src="assets/hero-video.mov" type="video/quicktime">
-                    Your browser does not support the video tag.
-                </video>
+                <iframe id="vimeoPlayer" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -75,10 +99,28 @@
                 <div class="slider-container">
                     <div class="gallery-slider">
                         <div class="slide-item">
-                            <img src="assets/joa-1.png" alt="Modern living room with ocean view" class="img-fluid">
+                            <img src="../assets/joa-1.png" alt="Modern living room with ocean view" class="img-fluid">
                         </div>
                         <div class="slide-item">
-                            <img src="assets/joa-2.png" alt="Luxury bedroom interior" class="img-fluid">
+                            <img src="../assets/joa-2.png" alt="Luxury bedroom interior" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/joa-1.jpg" alt="Modern living room with ocean view" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/joa-2.jpg" alt="Luxury bedroom interior" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/joa-3.jpg" alt="Modern living room with ocean view" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/joa-4.jpg" alt="Luxury bedroom interior" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/joa-5.jpg" alt="Modern living room with ocean view" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/joa-6.jpg" alt="Luxury bedroom interior" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -96,10 +138,28 @@
                 <div class="slider-container">
                     <div class="gallery-slider">
                         <div class="slide-item">
-                            <img src="assets/loe-1.png" alt="Modern living room with ocean view" class="img-fluid">
+                            <img src="../assets/loe-1.png" alt="Modern living room with ocean view" class="img-fluid">
                         </div>
                         <div class="slide-item">
-                            <img src="assets/loe-2.png" alt="Luxury bedroom interior" class="img-fluid">
+                            <img src="../assets/loe-2.png" alt="Luxury bedroom interior" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/loe-1.jpg" alt="Modern living room with ocean view" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/loe-2.jpg" alt="Luxury bedroom interior" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/loe-3.jpg" alt="Modern living room with ocean view" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/loe-4.jpg" alt="Luxury bedroom interior" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/loe-5.jpg" alt="Modern living room with ocean view" class="img-fluid">
+                        </div>
+                        <div class="slide-item">
+                            <img src="../assets/loe-6.jpg" alt="Luxury bedroom interior" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -114,19 +174,19 @@
                 <div class="art-de-vivre-content row g-5">
                     <div class="col-md-6 content-block">
                         <div class="card-item">
-                            <img src="assets/art-1.jpg" alt="Design-led penthouse interior">
+                            <img src="../assets/art-1.jpg" alt="Design-led penthouse interior">
                             <h3>DESIGN-LED, ICONIC PENTHOUSES</h3>
                             <p>More than a home, JOA and LOE are design manifestos. Every element has been handpicked or custom-crafted to evoke emotion and elevate the experience. These are not penthouses made for mere living—they are for feeling, for marveling. JOA and LOE are where form and feeling collide—icons in architecture, and icons in the making.</p>
                             <div class="divider"></div>
                         </div>
                         <div class="card-item">
-                            <img src="assets/art-3.png" alt="Design-led penthouse interior">
+                            <img src="../assets/art-3.png" alt="Design-led penthouse interior">
                             <h3>HOSPITALITY SERVICE</h3>
                             <p>Luxury here is not only seen but felt—in the invisible choreography of perfect service. The penthouses come with a dedicated butler trained to anticipate needs before they're spoken and Housekeeping. It’s service without intrusion, attentiveness without excess. Living in JOA and LOE is like checking into the world’s most discreet five-star hotel—except here, you own the keys. It’s luxury, personalised.</p>
                             <div class="divider"></div>
                         </div>
                         <div class="card-item">
-                            <img src="assets/art-5.png" alt="Design-led penthouse interior">
+                            <img src="../assets/art-5.png" alt="Design-led penthouse interior">
                             <h3>SEAMLESS ACCESS TO A <br/>HILLSIDE BOUTIQUE RESORT</h3>
                             <p>While JOA and LOE offer the privacy of standalone residences, they come with the rare advantage of seamless access to a nearby boutique resort: Legend Hill. Just steps away, guests can enjoy a sundowner at the stylish poolside bar, check into the spa, or indulge in cuisine crafted by Michelin-starred chef Glenn Viel, at the hotel’s signature restaurant. It’s the best of both worlds: the intimacy of a private home paired with the perks of a boutique resort.</p>
                             <div class="divider"></div>
@@ -134,19 +194,19 @@
                     </div>
                     <div class="col-md-6 content-block">
                         <div class="card-item">
-                            <img src="assets/art-2.png" alt="View from penthouse balcony">
+                            <img src="../assets/art-2.png" alt="View from penthouse balcony">
                             <h3>THE BEST SPOT</h3>
                             <p>Perched high above the glittering West Coast in Tamarin, on La Tourelle mountain, the penthouses occupy a rare position—both literally and metaphorically. Carved into the cliffside like natural sculpture, they command panoramic views of Le Morne’s mythic silhouette and the infinite blues of the Indian Ocean. Sunsets are cinematic. From this unique vantage, guests feel cradled by nature yet connected to it. JOA and LOE don’t just sit at the top of the mountain; they sit at the intersection of sky, sea, and story. This is not just a good view. This is the view.</p>
                             <div class="divider"></div>
                         </div>
                         <div class="card-item">
-                            <img src="assets/art-4.jpg" alt="View from penthouse balcony">
+                            <img src="../assets/art-4.jpg" alt="View from penthouse balcony">
                             <h3>CURATED ISLAND-LIVING EXPERIENCES</h3>
                             <p>JOA and LOE connect guests to the island's culture, landscape, and rhythm in a meaningful way. Your butler can plan island experiences and exclusive outings, but also bring the spirit of the island indoors: think a rum-tasting on the deck at sunset, a celebratory dinner crafted by the Chef using local, seasonal produce, a family cooking class, a serene massage on your terrace. The essence of Mauritius is infused into each and every curated experience.</p>
                             <div class="divider"></div>
                         </div>
                         <div class="card-item">
-                            <img src="assets/art-6.png" alt="View from penthouse balcony">
+                            <img src="../assets/art-6.png" alt="View from penthouse balcony">
                         </div>
                     </div>
                 </div>
@@ -164,7 +224,7 @@
                     <div class="plan">
                     <h3 class="plan-title">JOA</h3>
                     <div class="plan-image">
-                        <img src="assets/joa-plan.png" alt="Floor plan of penthouse JOA">
+                        <img src="../assets/plan-a.png" alt="Floor plan of penthouse JOA">
                     </div>
                     <div class="plan-specs">
                         443 sqm <span class="sep">|</span> 4 bedrooms <span class="sep">|</span>
@@ -177,7 +237,7 @@
                     <div class="plan">
                     <h3 class="plan-title">LOE</h3>
                     <div class="plan-image">
-                        <img src="assets/loe-plan.png" alt="Floor plan of penthouse LOE">
+                        <img src="../assets/plan-c.png" alt="Floor plan of penthouse LOE">
                     </div>
                     <div class="plan-specs">
                         443 sqm <span class="sep">|</span> 4 bedrooms <span class="sep">|</span>
@@ -200,7 +260,7 @@
                             <h3>LEGEND HILL<br/>Resort & Spa</h3>
                             <button class="btn cta">Discover</button>
                         </div>
-                        <img src="assets/site-overview.jpg" class="img-fluid" alt="Site plan">
+                        <img src="../assets/site-overview.jpg" class="img-fluid" alt="Site plan">
                     </div>
                     <div class="bg-beige small-text legend">
                         <h3>legend</h3>
@@ -223,10 +283,10 @@
                 <div class="slider-container">
                     <div class="gallery-slider">
                         <div class="slide-item">
-                            <img src="assets/architect-1.png" alt="" class="img-fluid">
+                            <img src="../assets/architect-1.png" alt="" class="img-fluid">
                         </div>
                         <div class="slide-item">
-                            <img src="assets/architect-2.png" alt="" class="img-fluid">
+                            <img src="../assets/architect-2.png" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -241,7 +301,7 @@
             <div class="container">
                 <h2 class="section-title double-font">one island, <span>one address</span></h2>
                 <div class="image-container">
-                    <img src="/assets/map.png" class="img-fluid" alt="Map of Mauritius">
+                    <img src="../assets/map.png" class="img-fluid" alt="Map of Mauritius">
                 </div>
                 <div class="content">
                     <div class="description">
@@ -257,16 +317,16 @@
                 <div class="slider-container">
                     <div class="gallery-slider">
                         <div class="slide-item">
-                            <img src="assets/getintouch-1.png" alt="" class="img-fluid">
+                            <img src="../assets/getintouch-1.png" alt="" class="img-fluid">
                         </div>
                         <div class="slide-item">
-                            <img src="assets/getintouch-2.png" alt="" class="img-fluid">
+                            <img src="../assets/getintouch-2.png" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
                 <div class="tagline">Let's Get in Touch</div>
                 <h2 class="section-title">JOA & LOE are now available to purchase in your favourite place on Earth.</h2>
-                <a class="btn cta">Contact us</a>
+                <a class="btn cta" href="contact.html">Contact us</a>
             </div>
         </section>
     </main>
@@ -290,11 +350,59 @@
 
     <!-- Bootstrap JS & Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>    
+    <!-- Custom JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const playButton = document.getElementById('playButton');
+            const videoModal = document.getElementById('videoModal');
+            const closeVideo = document.getElementById('closeVideo');
+            const vimeoPlayer = document.getElementById('vimeoPlayer');
+            const videoUrl = 'https://player.vimeo.com/video/1099659392';
+
+            // Play button click
+            playButton.addEventListener('click', function() {
+                videoModal.classList.add('active');
+                vimeoPlayer.src = videoUrl;
+                
+                // Fade in effect
+                setTimeout(() => {
+                    videoModal.classList.add('show');
+                }, 10);
+            });
+
+            // Close video
+            function closeVideoModal() {
+                videoModal.classList.remove('show');
+                
+                setTimeout(() => {
+                    videoModal.classList.remove('active');
+                    vimeoPlayer.src = '';
+                }, 300);
+            }
+
+            closeVideo.addEventListener('click', closeVideoModal);
+
+            // Close on background click
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    closeVideoModal();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                    closeVideoModal();
+                }
+            });
+        });
+    </script>
     <!-- jQuery (if not already included) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Slick JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

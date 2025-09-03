@@ -44,6 +44,9 @@ body {
   font-size: 6.25rem;
   text-align: center;
 }
+#contact .double-font {
+  color: #ffffff;
+}
 @media screen and (max-width: 1100px) {
   .double-font {
     font-size: 5rem !important;
@@ -123,11 +126,17 @@ header h1 span {
   justify-content: center;
   padding: 0;
 }
+#contact .hero {
+  height: 659px;
+}
 .hero .hero-text {
   width: 43%;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+#contact .hero .hero-text {
+  width: 100%;
 }
 @media screen and (max-width: 1023px) {
   .hero .hero-text {
@@ -253,12 +262,31 @@ header h1 span {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.video-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  background: #000;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#contact #intro {
+  padding-top: 0;
+}
 #intro .intro-text {
   font-size: 17px;
   line-height: 35px;
   max-width: 50%;
   margin: auto;
   padding-top: 4.5rem;
+}
+#contact #intro .intro-text {
+  max-width: 78%;
 }
 
 #gallery, #architect {
@@ -836,6 +864,176 @@ header h1 span {
   color: #2b2e34;
   border-color: #2b2e34;
   text-decoration: none;
+}
+
+.form-container {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #fdfcf7;
+  padding: 60px 0;
+}
+@media (max-width: 1280px) {
+  .form-container {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+.form-title {
+  text-align: center;
+  font: normal normal medium 30px/86px "Gelasio", serif;
+  letter-spacing: 0.3px;
+  color: #2B2E34;
+  margin-bottom: 80px;
+}
+@media (max-width: 768px) {
+  .form-title {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 50px;
+  }
+}
+
+.form-row {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 64px;
+}
+@media (max-width: 1024px) {
+  .form-row {
+    flex-direction: column;
+    gap: 64px;
+  }
+}
+.form-row .form-group {
+  flex: 1;
+}
+.form-row .form-group.full-width {
+  flex: none;
+  width: 100%;
+}
+
+label {
+  display: block;
+  text-align: left;
+  font-size: 17px;
+  letter-spacing: 1.19px;
+  color: #2B2E34;
+  margin-bottom: 10px;
+  font-family: "Gelasio", serif;
+}
+
+input[type=text],
+input[type=tel],
+input[type=email],
+select {
+  width: 100%;
+  height: 67px;
+  border: 1px solid #ccc;
+  padding: 0 20px;
+  font-family: "Gelasio", serif;
+  font-size: 17px;
+  background-color: #fdfcf7;
+  color: #2B2E34;
+}
+@media (max-width: 1200px) {
+  input[type=text],
+  input[type=tel],
+  input[type=email],
+  select {
+    width: 100%;
+    max-width: 550px;
+  }
+}
+@media (max-width: 768px) {
+  input[type=text],
+  input[type=tel],
+  input[type=email],
+  select {
+    height: 50px;
+    font-size: 16px;
+  }
+}
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=email]:focus,
+select:focus {
+  outline: none;
+  border-color: #2B2E34;
+  box-shadow: none;
+}
+
+select.form-select {
+  padding-right: 40px;
+  border-radius: 0;
+  background-color: #fdfcf7 !important;
+  cursor: pointer;
+  color: #2B2E34 !important;
+  border: 1px solid #ccc;
+}
+
+.radio-group {
+  margin-top: -15px;
+  margin-bottom: 192px;
+}
+@media (max-width: 768px) {
+  .radio-group {
+    margin-bottom: 100px;
+  }
+}
+.radio-group .radio-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 20px;
+}
+.radio-group .radio-options .radio-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.radio-group .radio-options .radio-option input[type=radio] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  appearance: none;
+  border: 1px solid #ccc;
+}
+.radio-group .radio-options .radio-option input[type=radio]:checked {
+  background: #2B2E34;
+}
+.radio-group .radio-options .radio-option label {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: 1.19px;
+  color: #2B2E34;
+}
+
+.submit-container {
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .submit-container .form-container {
+    padding: 30px 20px;
+  }
+}
+.submit-container .submit-btn {
+  width: 184px;
+  height: 56px;
+  font: italic normal normal 17px/50px "Gelasio", serif;
+  letter-spacing: 0.51px;
+  color: #fdfcf7;
+  background-color: #2B2E34;
+  border: 2px solid #2B2E34;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+.submit-container .submit-btn:hover {
+  background-color: #fdfcf7;
+  color: #2B2E34;
 }
 
 footer {

@@ -18,11 +18,22 @@
 </head>
 
 <body id="contact">
-    <!-- Header with Offcanvas Sidebar -->
     <!-- Header -->
     <header>
         <!-- Logo centered -->
         <h1>JOA <span>&</span> LOE</h1>
+        <nav role="navigation" aria-label="Language selector">
+            <select id="lang-switcher" name="lang-switcher" aria-label="Select language" onchange="if(this.value)window.location.href=this.value">
+                <option value="/" selected>EN</option>
+                <option value="/fr">FR</option>
+            </select>
+        </nav>
+        <script>
+            (function(){
+                var sel = document.getElementById('lang-switcher');
+                if (location.pathname.indexOf('/fr') === 0) sel.value = '/fr';
+            })();
+        </script>
     </header>
 
     <main>

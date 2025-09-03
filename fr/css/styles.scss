@@ -90,6 +90,10 @@ body {
     font-size: 6.25rem; // 100px
     text-align: center;
 
+    #contact &{
+        color: $color-white;
+    }
+
     @media screen and (max-width:1100px){
         font-size: 5rem !important; // 80px
     }
@@ -189,11 +193,19 @@ header{
     justify-content: center;
     padding: 0;
 
+    #contact &{
+        height:659px
+    }
+
     .hero-text{
         width: 43%;
         margin: 0 auto;
         position: relative;
         z-index: 1;
+
+        #contact &{
+            width: 100%;
+        }
 
         @media screen and (max-width:1023px){
             width: 80%;
@@ -325,16 +337,37 @@ header{
     }
 }
 
+.video-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 //────────────────────────────────────────────────────────
 // Intro Section
 //────────────────────────────────────────────────────────
 #intro {
+    #contact &{
+        padding-top: 0;
+    }
+
     .intro-text {
         font-size: 17px; // 25px
         line-height: 35px; // 45px
         max-width: 50%;
         margin: auto;
         padding-top: 4.5rem;
+
+        #contact &{
+            max-width: 78%;
+        }
     }
 }
 
@@ -995,6 +1028,175 @@ header{
             color: $color-dark;
             border-color:$color-dark;
             text-decoration: none;
+        }
+    }
+}
+
+//────────────────────────────────────────────────────────
+// Contact Page
+//────────────────────────────────────────────────────────
+.form-container {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #fdfcf7;
+    padding: 60px 0;
+
+    @media (max-width: 1280px){
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+.form-title {
+    text-align: center;
+    font: normal normal medium 30px/86px "Gelasio", serif;
+    letter-spacing: 0.3px;
+    color: #2B2E34;
+    margin-bottom: 80px;
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+        line-height: 1.5;
+        margin-bottom: 50px;
+    }
+}
+
+.form-row {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 64px;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    .form-group {
+        flex: 1;
+
+        &.full-width {
+            flex: none;
+            width: 100%;
+        }
+    }
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 17px;
+    letter-spacing: 1.19px;
+    color: #2B2E34;
+    margin-bottom: 10px;
+    font-family: "Gelasio", serif;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select {
+    width: 100%;
+    height: 67px;
+    border: 1px solid #ccc;
+    padding: 0 20px;
+    font-family: "Gelasio", serif;
+    font-size: 17px;
+    background-color: #fdfcf7;
+    color: #2B2E34;
+
+    @media (max-width: 1200px) {
+        width: 100%;
+        max-width: 550px;
+    }
+
+    @media (max-width: 768px) {
+        height: 50px;
+        font-size: 16px;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: #2B2E34;
+        box-shadow: none;
+    }
+}
+
+select.form-select {
+    padding-right: 40px;
+    border-radius: 0;
+    background-color: #fdfcf7 !important;
+    cursor: pointer;
+    color: #2B2E34 !important;
+    border: 1px solid #ccc;
+}
+
+.radio-group {
+    margin-top: -15px;
+    margin-bottom: 192px;
+
+    @media (max-width: 768px) {
+        margin-bottom: 100px;
+    }
+
+    .radio-options {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 20px;
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            input[type="radio"] {
+                width: 20px;
+                height: 20px;
+                margin: 0;
+                appearance: none;
+                border: 1px solid #ccc;
+
+                &:checked {
+                    background: #2B2E34;
+                }
+            }
+
+            label {
+                margin: 0;
+                font-size: 17px;
+                letter-spacing: 1.19px;
+                color: #2B2E34;
+            }
+        }
+    }
+}
+
+.submit-container {
+    text-align: center;
+
+    @media (max-width: 768px) {
+        .form-container {
+            padding: 30px 20px;
+        }
+    }
+
+    .submit-btn {
+        width: 184px;
+        height: 56px;
+        font: italic normal normal 17px/50px "Gelasio", serif;
+        letter-spacing: 0.51px;
+        color: #fdfcf7;
+        background-color: #2B2E34;
+        border: 2px solid #2B2E34;
+        border-radius: 50px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #fdfcf7;
+            color: #2B2E34;
         }
     }
 }

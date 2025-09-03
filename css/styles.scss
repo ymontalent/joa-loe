@@ -180,6 +180,32 @@ header{
     }
 }
 
+nav{
+    position: absolute;
+    right: 10%;
+    top: 10%;
+}
+
+#lang-switcher {
+    background: transparent !important;
+    color: white !important;
+    border: none;
+    font-size: 1rem;
+    padding: 5px 0.5rem;
+    height: auto;
+    cursor: pointer;
+}
+
+#lang-switcher:focus {
+    outline: 1px solid white;
+}
+
+option {
+    background-color: black;
+    /* Needed so dropdown list is readable */
+    color: white;
+}
+
 //────────────────────────────────────────────────────────
 // Hero Section
 //────────────────────────────────────────────────────────
@@ -212,12 +238,12 @@ header{
         }
 
         .tagline{
-            font-size: 20px; // 30px
-            line-height: 35px; // 45px
+            font-size: 20px;
+            line-height: 35px;
             color: white;
             font-weight: 200;
             padding: 0 3%;
-            margin: 3.125rem 0; // 50px
+            margin: 3.125rem 0;
         }
 
         .btn.cta {
@@ -241,7 +267,6 @@ header{
                 text-decoration: none;
             }
         }
-
     }
 
     h1{
@@ -250,14 +275,36 @@ header{
 
     &-bg {
         @include absolute-full;
-        background: url('../assets/poster.png') center center/cover no-repeat;
         filter: brightness(0.8);
+
+        // Fallback background image
+        background: url('../assets/poster.png') center center/cover no-repeat;
 
         &::after {
             content: '';
             @include absolute-full;
             background: linear-gradient(to bottom, rgba($color-black, 0.2) 0%, rgba($color-black, 0.4) 100%);
+            z-index: 1;
         }
+
+        // Video container within hero-bg
+        .video-container {
+            @include absolute-full;
+            z-index: 0;
+
+            video {
+                @include absolute-full;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    // Ensure hero content appears above video
+    .hero-content {
+        position: relative;
+        z-index: 2;
     }
 }
 
@@ -295,59 +342,59 @@ header{
     &.show {
         opacity: 1;
     }
-}
 
-.video-container {
-    position: relative;
-    width: 90%;
-    max-width: 1200px;
-    padding-bottom: 56.25%; // 16:9 aspect ratio
+    .video-container {
+        position: relative;
+        width: 90%;
+        max-width: 1200px;
+        padding-bottom: 56.25%; // 16:9 aspect ratio
 
-    iframe {
-        @include absolute-full;
-        border: none;
+        iframe {
+            @include absolute-full;
+            border: none;
+        }
     }
-}
 
-.close-video {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    width: 2.5rem; // 40px
-    height: 2.5rem; // 40px
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 2001;
-
-    &::before,
-    &::after {
-        content: '';
+    .close-video {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 1.875rem; // 30px
-        height: 2px;
-        background: $color-white;
-        transform: translate(-50%, -50%) rotate(45deg);
+        top: 2rem;
+        right: 2rem;
+        width: 2.5rem; // 40px
+        height: 2.5rem; // 40px
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 2001;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1.875rem; // 30px
+            height: 2px;
+            background: $color-white;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
     }
 
-    &::after {
-        transform: translate(-50%, -50%) rotate(-45deg);
+    .video-container {
+        position: relative;
+        width: 90%;
+        max-width: 1200px;
+        background: #000;
     }
-}
 
-.video-container {
-    position: relative;
-    width: 90%;
-    max-width: 1200px;
-    background: #000;
-}
-
-.video-container video {
-    width: 100%;
-    height: auto;
-    display: block;
+    .video-container video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 }
 
 //────────────────────────────────────────────────────────

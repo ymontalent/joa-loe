@@ -98,3 +98,17 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // Optional: Reset form after successful submission
     form.reset();
 });
+
+// Ensure hero video plays automatically on mobile devices
+const heroVideo = document.getElementById('hero-video');
+if (heroVideo) {
+    // For iOS Safari - attempt to play the video
+    heroVideo.play().catch(error => {
+        console.log('Auto-play was prevented:', error);
+    });
+    
+    // Handle video load errors gracefully
+    heroVideo.addEventListener('error', function() {
+        console.log('Video failed to load, falling back to poster image');
+    });
+}
